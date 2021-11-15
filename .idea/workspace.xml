@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Atosiak:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="91c0b3ab-5dc4-4300-97a2-1c43586e5ac4" name="Changes" comment="Fix Docker bs">
+      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="20xAqmElNFbUeJX6mx1YTz07k68" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Atosiak_jar" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.13623977" />
+    <property name="project.structure.side.proportion" value="0.28600684" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projekty\Atosiak" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projekty\Atosiak\out\artifacts\Atosiak_jar" />
+      <recent name="E:\Projekty\Atosiak\src\main\java\com\zduniusz\data\misc" />
+      <recent name="E:\Projekty\Atosiak\src\main\resources" />
+      <recent name="E:\Projekty\Atosiak" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.zduniusz.data.covid" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.DOCKER REMOTE">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zduniusz.Main" />
+      <module name="Atosiak" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zduniusz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test All" type="JUnit" factoryName="JUnit">
+      <module name="Atosiak" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DOCKER LOCAL" type="docker-deploy" factoryName="dockerfile" server-name="Docker Local">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="atosiak" />
+          <option name="containerName" value="Atosiak" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Atosiak:jar" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="DOCKER REMOTE" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="atosiak" />
+          <option name="containerName" value="Atosiak" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Atosiak:jar" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Docker.DOCKER REMOTE" />
+      <item itemvalue="Docker.DOCKER LOCAL" />
+      <item itemvalue="JUnit.Test All" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="91c0b3ab-5dc4-4300-97a2-1c43586e5ac4" name="Changes" comment="" />
+      <created>1636976066104</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636976066104</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Add Main and .gitignore">
+      <created>1636976299728</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1636976299728</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add libs, add thread, add downloading utility, structs and tests">
+      <created>1636982560408</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1636982560409</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add Docker support through Dockerfile, add proper slf4j implementation, add Discord support">
+      <created>1636987348167</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1636987348167</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fix Docker bs">
+      <created>1636994433157</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636994433157</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add Main and .gitignore" />
+    <MESSAGE value="Add libs, add thread, add downloading utility and structs" />
+    <MESSAGE value="Add libs, add thread, add downloading utility, structs and tests" />
+    <MESSAGE value="Add Docker support through Dockerfile, add proper slf4j implementation, add Discord support" />
+    <MESSAGE value="Fix Docker bs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Docker bs" />
+  </component>
+</project>
