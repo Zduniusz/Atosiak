@@ -1,5 +1,7 @@
 package com.zduniusz.data.covid;
 
+import java.io.IOException;
+
 public class DailyCovidStat {
     private int dailyInfected;
     private int dailyTested;

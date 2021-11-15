@@ -1,6 +1,7 @@
 package com.zduniusz.threads;
 
 import com.zduniusz.Main;
+import com.zduniusz.data.covid.DailyCovidStat;
 import com.zduniusz.data.covid.Download;
 
 import java.io.IOException;
@@ -12,7 +13,7 @@ public class UpdateCovid implements Runnable {
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             try {
-                Main.dailyCovidStat =  Download.formatData(Download.downloadData());
+                Main.dailyCovidStat = Download.formatData(Download.downloadData());
                 Thread.sleep(2 * 60 * 1000);
             } catch (InterruptedException | IOException ignored) {} //Potem coś z tym zrobię, żeby aplikacja była bardziej stabilna emocjonalnie
         }
