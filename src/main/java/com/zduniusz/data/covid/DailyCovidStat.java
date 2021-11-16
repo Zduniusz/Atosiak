@@ -9,10 +9,14 @@ public class DailyCovidStat {
     private int dailyDeceased;
     private int dailyRecovered;
     private int dailyQuarantine;
+    private String txtDate;
 
     public int getDailyInfected() {
         return dailyInfected;
     }
 
+    public String getTxtDate() {
+        return txtDate;
+    }
     //Na razie nie potrzebuje nic oprócz getDaily Infected
 }
