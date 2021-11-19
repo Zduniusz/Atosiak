@@ -9,7 +9,7 @@ public class CommandHandler extends ListenerAdapter {
     @Override
     public void onSlashCommand(SlashCommandEvent event) {
         switch (event.getName()) {
-            case "zakazenia" -> Infections.reply(event);
+            case "zakażenia" -> Infections.reply(event);
             case "szczęśliwy" -> LuckyNumber.reply(event);
         }
     }
