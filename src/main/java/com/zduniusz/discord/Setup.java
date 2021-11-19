@@ -13,7 +13,8 @@ import java.util.Objects;
 
 public class Setup {
     public Setup() throws LoginException {
-        Main.jda = JDABuilder.createLight(getAuth().TOKEN, Collections.emptyList())
+        Auth auth = getAuth();
+        Main.jda = JDABuilder.createLight((auth.TESTING ? auth.TOKEN_TESTING : auth.TOKEN), Collections.emptyList())
                 .addEventListeners(new CommandHandler())
                 .setActivity(Activity.listening(" jazzu😎"))
                 .build();
@@ -25,9 +26,9 @@ public class Setup {
         return new Gson().fromJson(reader, Auth.class);
     }
 
-    class Auth {
-        String ID;
-        String KEY;
+    static class Auth {
         String TOKEN;
+        String TOKEN_TESTING;
+        Boolean TESTING;
     }
 }

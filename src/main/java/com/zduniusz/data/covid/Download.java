@@ -20,13 +20,13 @@ public class Download {
 
         Response response = client.newCall(request).execute();
 
-        if(!response.isSuccessful())
+        if (!response.isSuccessful())
             throw new HttpException(response.toString());
 
         return Objects.requireNonNull(response.body()).string();
     }
 
-    public static DailyCovidStat formatData(String rawData){
+    public static DailyCovidStat formatData(String rawData) {
         return new Gson().fromJson(rawData, DailyCovidStat.class);
     }
 }

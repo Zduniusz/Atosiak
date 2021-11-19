@@ -1,7 +1,5 @@
 package com.zduniusz.data.covid;
 
-import java.io.IOException;
-
 public class DailyCovidStat {
     private int dailyInfected;
     private int dailyTested;
@@ -18,5 +16,5 @@ public class DailyCovidStat {
     public String getTxtDate() {
         return txtDate;
     }
-    //Na razie nie potrzebuje nic oprócz getDaily Infected
+    //Na razie nie potrzebuje nic oprócz getDaily Infected i getTxtDate
 }
