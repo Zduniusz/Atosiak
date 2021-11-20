@@ -3,6 +3,7 @@ package com.zduniusz.discord;
 import com.zduniusz.Main;
 import com.zduniusz.discord.commandlist.Infections;
 import com.zduniusz.discord.commandlist.LuckyNumber;
+import com.zduniusz.discord.commandlist.Monitors;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -16,7 +17,8 @@ public class CommandManager {
     private static void loadCommands() throws NoSuchMethodException {
         commands = new Command[] {
                 new Command("zakażenia", "Wyświetl liczbę zakażeń z dzisiaj", Infections.class),
-                new Command("szczęśliwy", "Wyświetl jakie numerki mają dzisiaj szczęśliwy numerek", LuckyNumber.class)
+                new Command("szczęśliwy", "Wyświetl jakie numerki mają dzisiaj szczęśliwy numerek", LuckyNumber.class),
+                new Command("dyżurni","Wyświetl kto aktualnie jest dyżurnym", Monitors.class)
         };
     }
 
@@ -56,9 +58,6 @@ public class CommandManager {
                 commandFromDiscord.editCommand().setDescription(commandFromList.getDescription()).queue();
 
         }
-
-        System.out.println(commandsFromDiscord);
-
     }
 
     protected static class Command{
