@@ -17,5 +17,4 @@ public class DailyCovidStat {
     public String getTxtDate() {
         return txtDate;
     }
-    //Na razie nie potrzebuje nic oprócz getDaily Infected i getTxtDate
 }
