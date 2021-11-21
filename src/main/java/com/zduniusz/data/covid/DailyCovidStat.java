@@ -1,5 +1,6 @@
 package com.zduniusz.data.covid;
 
+@SuppressWarnings("unused") //Na razie nie potrzebuje nic oprócz getDaily Infected i getTxtDate
 public class DailyCovidStat {
     private int dailyInfected;
     private int dailyTested;
@@ -16,5 +17,4 @@ public class DailyCovidStat {
     public String getTxtDate() {
         return txtDate;
     }
-    //Na razie nie potrzebuje nic oprócz getDaily Infected i getTxtDate
 }

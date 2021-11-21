@@ -12,16 +12,26 @@ import java.util.Collections;
 import java.util.Objects;
 
 public class Setup {
-    public Setup() throws LoginException {
-        Auth auth = getAuth();
+
+    private static Auth auth;
+
+    public static void setup() throws LoginException {
+        auth = getAuth();
         Main.jda = JDABuilder.createLight((auth.TESTING ? auth.TOKEN_TESTING : auth.TOKEN), Collections.emptyList())
-                .addEventListeners(new CommandHandler())
-                .setActivity(Activity.listening(" jazzu😎"))
+                .setActivity(Activity.listening(" discopolo😞"))
                 .build();
     }
 
-    Auth getAuth() {
-        Reader reader = new InputStreamReader(Objects.requireNonNull(this.getClass()
+    public static void registerCommandListeners(){
+        Main.jda.getPresence().setActivity(Activity.listening(" jazzu😎"));
+        Main.jda.addEventListener(new CommandHandler());
+
+        auth = null; //Free my precious ram
+        System.gc();
+    }
+
+    static Auth getAuth() {
+        Reader reader = new InputStreamReader(Objects.requireNonNull(Setup.class
                 .getResourceAsStream("/Auth.json")));
         return new Gson().fromJson(reader, Auth.class);
     }

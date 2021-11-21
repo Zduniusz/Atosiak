@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
+@SuppressWarnings("unused")
 public class Infections {
     public static void reply(SlashCommandEvent event) {
         event.reply("Dzisiaj jest **" + formatNumber(Main.dailyCovidStat.getDailyInfected()) + "** nowych zakażeń. Dane z **" + Main.dailyCovidStat.getTxtDate() + "**").setEphemeral(false).queue();

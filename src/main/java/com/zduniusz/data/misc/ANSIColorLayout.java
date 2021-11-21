@@ -4,6 +4,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.PatternLayout;
 import org.apache.log4j.spi.LoggingEvent;
 
+@SuppressWarnings("unused")
 public class ANSIColorLayout extends PatternLayout {
     public static final String DEFAULT_COLOR_ALL        = "\u001B[1;37m";
     public static final String DEFAULT_COLOR_FATAL      = "\u001B[0;31m";
