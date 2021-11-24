@@ -14,7 +14,7 @@ public class Monitors {
         LocalDate today = LocalDate.now(ZoneId.of("CET"));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
-        Optional<Monitor> optionalMonitors = Main.monitorsList.stream().filter(x -> today.isAfter(LocalDate.parse(x.date, formatter)) && today.isBefore(LocalDate.parse(x.date, formatter).plusDays(6)) || today.isEqual(LocalDate.parse(x.date, formatter))|| today.isEqual(LocalDate.parse(x.date, formatter).plusDays(1))).findFirst();
+        Optional<Monitor> optionalMonitors = Main.monitorsList.stream().filter(x -> today.isAfter(LocalDate.parse(x.date, formatter)) && today.isBefore(LocalDate.parse(x.date, formatter).plusDays(6)) || today.isEqual(LocalDate.parse(x.date, formatter)) || today.isEqual(LocalDate.parse(x.date, formatter).plusDays(1))).findFirst();
         if (optionalMonitors.isEmpty()) {
             event.reply("Dyżurni nie zostali wpisani.").queue();
             return;

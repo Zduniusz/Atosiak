@@ -5,6 +5,7 @@ import com.zduniusz.discord.commandlist.Infections;
 import com.zduniusz.discord.commandlist.LuckyNumber;
 import com.zduniusz.discord.commandlist.Monitors;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
@@ -15,10 +16,10 @@ public class CommandManager {
     public static Command[] commands;
 
     private static void loadCommands() throws NoSuchMethodException {
-        commands = new Command[] {
+        commands = new Command[]{
                 new Command("zakażenia", "Wyświetl liczbę zakażeń z dzisiaj", Infections.class),
                 new Command("szczęśliwy", "Wyświetl jakie numerki mają dzisiaj szczęśliwy numerek", LuckyNumber.class),
-                new Command("dyżurni","Wyświetl kto aktualnie jest dyżurnym", Monitors.class)
+                new Command("dyżurni", "Wyświetl kto aktualnie jest dyżurnym", Monitors.class)
         };
     }
 
@@ -29,17 +30,17 @@ public class CommandManager {
         List<net.dv8tion.jda.api.interactions.commands.Command> commandsFromDiscord = Main.jda.retrieveCommands().complete();
 
         for (net.dv8tion.jda.api.interactions.commands.Command commandFromDiscord : commandsFromDiscord) {
-              Optional<Command> optionalCommandFromList = Arrays.stream(commands).filter(command -> command.getName().equals(commandFromDiscord.getName())).findFirst();
+            Optional<Command> optionalCommandFromList = Arrays.stream(commands).filter(command -> command.getName().equals(commandFromDiscord.getName())).findFirst();
 
-              if(optionalCommandFromList.isEmpty()) {
-                  commandFromDiscord.delete().queue();
-                  continue;
-              }
+            if (optionalCommandFromList.isEmpty()) {
+                commandFromDiscord.delete().queue();
+                continue;
+            }
 
-              Command commandFromList = optionalCommandFromList.get();
+            Command commandFromList = optionalCommandFromList.get();
 
-              if(!commandFromList.getDescription().equals(commandFromDiscord.getDescription()))
-                  commandFromDiscord.editCommand().setDescription(commandFromList.getDescription()).queue();
+            if (!commandFromList.getDescription().equals(commandFromDiscord.getDescription()))
+                commandFromDiscord.editCommand().setDescription(commandFromList.getDescription()).queue();
         }
 
         commandsFromDiscord = Main.jda.retrieveCommands().complete();
@@ -47,7 +48,7 @@ public class CommandManager {
         for (Command commandFromList : commands) {
             Optional<net.dv8tion.jda.api.interactions.commands.Command> optionalCommandFromDiscord = commandsFromDiscord.stream().filter(command -> command.getName().equals(commandFromList.getName())).findFirst();
 
-            if(optionalCommandFromDiscord.isEmpty()){
+            if (optionalCommandFromDiscord.isEmpty()) {
                 Main.jda.upsertCommand(commandFromList.getName(), commandFromList.getDescription()).queue();
                 continue;
             }
@@ -60,19 +61,18 @@ public class CommandManager {
         }
     }
 
-    protected static class Command{
+    protected static class Command {
+        private final String mName;
+        private final String mDescription;
+        private final Method mHandler;
         Command(String name, String description, Class<?> handler) throws NoSuchMethodException {
             mName = name;
             mDescription = description;
-            if(handler != null)
+            if (handler != null)
                 mHandler = handler.getDeclaredMethod("reply", SlashCommandEvent.class);
             else
                 mHandler = null;
         }
-
-        private final String mName;
-        private final String mDescription;
-        private final Method mHandler;
 
         public String getName() {
             return mName;

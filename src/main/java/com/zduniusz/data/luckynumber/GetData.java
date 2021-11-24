@@ -28,7 +28,11 @@ public class GetData {
         if (!response.isSuccessful())
             throw new HttpException(response.toString());
 
-        return Objects.requireNonNull(response.body()).string();
+        String responseString = Objects.requireNonNull(response.body()).string();
+
+        response.close();
+
+        return responseString;
     }
 
     public static List<LuckyNumber> formatData(String rawData) {

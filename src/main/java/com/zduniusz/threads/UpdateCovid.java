@@ -12,7 +12,8 @@ public class UpdateCovid implements Runnable {
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             try {
-                Main.dailyCovidStat = Download.formatData(Download.downloadData());
+                Main.dailyCovidStat = Download.formatDataToday(Download.downloadDataToday());
+                Main.weeklyCovidStat = Download.formatDataWeek(Download.downloadDataWeek());
                 Thread.sleep(2 * 60 * 1000);
             } catch (InterruptedException | IOException ignored) {
             } //Potem coś z tym zrobię, żeby aplikacja była bardziej stabilna emocjonalnie

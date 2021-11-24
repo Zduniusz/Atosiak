@@ -4,17 +4,15 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class GetDataTest {
 
     @Test
     void downloadData() throws IOException {
-        Download.downloadData();
+        Download.downloadDataToday();
     }
 
     @Test
     void formatData() throws IOException {
-        Download.formatData(Download.downloadData());
+        Download.formatDataToday(Download.downloadDataToday());
     }
 }
