@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class GetMonitors {
+public class GetMonitor {
     public static String downloadData() throws IOException {
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url("https://raw.githubusercontent.com/Zduniusz/Atosiak/master/src/main/resources/timedependentdata/Monitors.json")
+                .url("https://raw.githubusercontent.com/Zduniusz/Atosiak/master/src/main/resources/timedependentdata/Monitor.json")
                 .get()
                 .build();
 
@@ -31,15 +31,15 @@ public class GetMonitors {
         return Objects.requireNonNull(response.body()).string();
     }
 
-    public static List<Monitors> formatData(String rawData) {
-        return new Gson().fromJson(rawData, new TypeToken<ArrayList<Monitors>>() {
+    public static List<Monitor> formatData(String rawData) {
+        return new Gson().fromJson(rawData, new TypeToken<ArrayList<Monitor>>() {
         }.getType());
     }
 
-    public List<Monitors> getMonitorsFromResources() {
+    public List<Monitor> getMonitorsFromResources() {
         Reader reader = new InputStreamReader(Objects.requireNonNull(this.getClass()
-                .getResourceAsStream("/timedependentdata/Monitors.json")));
-        return new Gson().fromJson(reader, new TypeToken<ArrayList<Monitors>>() {
+                .getResourceAsStream("/timedependentdata/Monitor.json")));
+        return new Gson().fromJson(reader, new TypeToken<ArrayList<Monitor>>() {
         }.getType());
     }
 }
