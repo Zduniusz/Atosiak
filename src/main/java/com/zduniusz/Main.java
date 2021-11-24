@@ -8,6 +8,7 @@ import com.zduniusz.data.monitors.GetMonitors;
 import com.zduniusz.data.monitors.Monitors;
 import com.zduniusz.discord.CommandManager;
 import com.zduniusz.discord.Setup;
+import com.zduniusz.threads.UpdateLists;
 import net.dv8tion.jda.api.JDA;
 
 import javax.security.auth.login.LoginException;
@@ -24,8 +25,8 @@ public class Main {
 
     public static void main(String[] args) throws LoginException, IOException, NoSuchMethodException {
         new Thread(new com.zduniusz.threads.UpdateCovid()).start();
-        new Thread(new com.zduniusz.threads.UpdateLuckyNumber()).start();
-        new Thread(new com.zduniusz.threads.UpdateMonitors()).start();
+        new Thread(new UpdateLists()).start();
+        new Thread(new com.zduniusz.threads.UpdateLists()).start();
 
 
         dailyCovidStat = Download.formatData(Download.downloadData());
