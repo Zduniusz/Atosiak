@@ -4,12 +4,13 @@ import com.zduniusz.Main;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 public class Monitors {
     public static void reply(SlashCommandEvent event) {
-        LocalDate today = LocalDate.now();
+        LocalDate today = LocalDate.now(ZoneId.of("CET"));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
         Optional<com.zduniusz.data.monitors.Monitors> optionalMonitors = Main.monitorsList.stream().filter(x -> today.isAfter(LocalDate.parse(x.date[0], formatter)) && today.isBefore(LocalDate.parse(x.date[1], formatter)) || today.isEqual(LocalDate.parse(x.date[0], formatter))|| today.isEqual(LocalDate.parse(x.date[1], formatter))).findFirst();
