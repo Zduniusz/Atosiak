@@ -2,9 +2,7 @@ package com.zduniusz;
 
 import com.zduniusz.data.covid.DailyCovidStat;
 import com.zduniusz.data.covid.Download;
-import com.zduniusz.data.luckynumber.GetData;
 import com.zduniusz.data.luckynumber.LuckyNumber;
-import com.zduniusz.data.monitors.GetMonitor;
 import com.zduniusz.data.monitors.Monitor;
 import com.zduniusz.discord.CommandManager;
 import com.zduniusz.discord.Setup;
@@ -19,6 +17,7 @@ public class Main {
     public static JDA jda;
 
     public static DailyCovidStat dailyCovidStat;
+    public static List<DailyCovidStat> weeklyCovidStat;
     public static List<LuckyNumber> luckyNumberList;
     public static List<Monitor> monitorsList;
 
@@ -26,10 +25,13 @@ public class Main {
         new Thread(new com.zduniusz.threads.UpdateCovid()).start();
         new Thread(new com.zduniusz.threads.UpdateLists()).start();
 
-
-        dailyCovidStat = Download.formatData(Download.downloadData());
-        luckyNumberList = new GetData().getLuckyNumbersFromResources();
-        monitorsList = new GetMonitor().getMonitorsFromResources();
+        dailyCovidStat = Download.formatDataToday(Download.downloadDataToday());
+        new Thread(() -> {
+            try {
+                weeklyCovidStat = Download.formatDataWeek(Download.downloadDataWeek());
+            } catch (IOException ignored) {
+            }
+        }).start();
 
         Setup.setup();
 

@@ -8,13 +8,13 @@ public class DailyCovidStat {
     private int dailyDeceased;
     private int dailyRecovered;
     private int dailyQuarantine;
-    private String txtDate;
+    private String lastUpdatedAtSource;
 
     public int getDailyInfected() {
         return dailyInfected;
     }
 
-    public String getTxtDate() {
-        return txtDate;
+    public String getLastUpdatedAtSource() {
+        return lastUpdatedAtSource;
     }
 }
