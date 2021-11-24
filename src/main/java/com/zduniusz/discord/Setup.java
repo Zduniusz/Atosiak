@@ -22,7 +22,7 @@ public class Setup {
                 .build();
     }
 
-    public static void registerCommandListeners(){
+    public static void registerCommandListeners() {
         Main.jda.getPresence().setActivity(Activity.listening(" jazzu😎"));
         Main.jda.addEventListener(new CommandHandler());
 

@@ -18,7 +18,7 @@ public class CommandHandler extends ListenerAdapter {
 
         CommandManager.Command command = optionalCommand.get();
 
-        if(command.getHandler() == null)
+        if (command.getHandler() == null)
             return;
 
         try {
