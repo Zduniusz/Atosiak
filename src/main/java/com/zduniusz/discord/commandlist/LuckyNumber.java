@@ -3,14 +3,12 @@ package com.zduniusz.discord.commandlist;
 import com.zduniusz.Main;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
-import java.time.*;
-import java.time.temporal.TemporalAccessor;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Optional;
 
 public class LuckyNumber {
     public static void reply(SlashCommandEvent event) {
-        LocalDate today = LocalDate.now(ZoneId.of("CET"));
+        LocalDate today = LocalDate.now();
 
         Optional<com.zduniusz.data.luckynumber.LuckyNumber> optionalLuckyNumbers = Main.luckyNumberList.stream().filter(x -> x.date.equals(today.toString().replace("-", "."))).findFirst();
 
