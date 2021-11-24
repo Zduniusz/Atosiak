@@ -33,6 +33,6 @@ public class Monitors {
         }
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM");
-        event.reply("Od dnia " + dtf.format(LocalDate.parse(monitors.date)) + " do dnia " + dtf.format(LocalDate.parse(monitors.date).plusDays(6)) + " dyżurnymi są: " + monitorsFormatted).queue();
+        event.reply("Od dnia " + dtf.format(LocalDate.parse(monitors.date, formatter)) + " do dnia " + dtf.format(LocalDate.parse(monitors.date, formatter).plusDays(6)) + " dyżurnymi są: " + monitorsFormatted).queue();
     }
 }
