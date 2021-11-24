@@ -4,8 +4,8 @@ import com.zduniusz.data.covid.DailyCovidStat;
 import com.zduniusz.data.covid.Download;
 import com.zduniusz.data.luckynumber.GetData;
 import com.zduniusz.data.luckynumber.LuckyNumber;
-import com.zduniusz.data.monitors.GetMonitors;
-import com.zduniusz.data.monitors.Monitors;
+import com.zduniusz.data.monitors.GetMonitor;
+import com.zduniusz.data.monitors.Monitor;
 import com.zduniusz.discord.CommandManager;
 import com.zduniusz.discord.Setup;
 import net.dv8tion.jda.api.JDA;
@@ -20,17 +20,16 @@ public class Main {
 
     public static DailyCovidStat dailyCovidStat;
     public static List<LuckyNumber> luckyNumberList;
-    public static List<Monitors> monitorsList;
+    public static List<Monitor> monitorsList;
 
     public static void main(String[] args) throws LoginException, IOException, NoSuchMethodException {
         new Thread(new com.zduniusz.threads.UpdateCovid()).start();
-        new Thread(new com.zduniusz.threads.UpdateLuckyNumber()).start();
-        new Thread(new com.zduniusz.threads.UpdateMonitors()).start();
+        new Thread(new com.zduniusz.threads.UpdateLists()).start();
 
 
         dailyCovidStat = Download.formatData(Download.downloadData());
         luckyNumberList = new GetData().getLuckyNumbersFromResources();
-        monitorsList = new GetMonitors().getMonitorsFromResources();
+        monitorsList = new GetMonitor().getMonitorsFromResources();
 
         Setup.setup();
 

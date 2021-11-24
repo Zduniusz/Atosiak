@@ -1,6 +1,7 @@
 package com.zduniusz.discord.commandlist;
 
 import com.zduniusz.Main;
+import com.zduniusz.data.monitors.Monitor;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
 import java.time.LocalDate;
@@ -13,13 +14,13 @@ public class Monitors {
         LocalDate today = LocalDate.now(ZoneId.of("CET"));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
-        Optional<com.zduniusz.data.monitors.Monitors> optionalMonitors = Main.monitorsList.stream().filter(x -> today.isAfter(LocalDate.parse(x.date[0], formatter)) && today.isBefore(LocalDate.parse(x.date[1], formatter)) || today.isEqual(LocalDate.parse(x.date[0], formatter))|| today.isEqual(LocalDate.parse(x.date[1], formatter))).findFirst();
+        Optional<Monitor> optionalMonitors = Main.monitorsList.stream().filter(x -> today.isAfter(LocalDate.parse(x.date, formatter)) && today.isBefore(LocalDate.parse(x.date, formatter).plusDays(6)) || today.isEqual(LocalDate.parse(x.date, formatter))|| today.isEqual(LocalDate.parse(x.date, formatter).plusDays(1))).findFirst();
         if (optionalMonitors.isEmpty()) {
             event.reply("Dyżurni nie zostali wpisani.").queue();
             return;
         }
 
-        com.zduniusz.data.monitors.Monitors monitors = optionalMonitors.get();
+        Monitor monitors = optionalMonitors.get();
 
         StringBuilder monitorsFormatted = new StringBuilder();
 
@@ -31,6 +32,7 @@ public class Monitors {
                 monitorsFormatted.append(" i ");
         }
 
-        event.reply("Dzisiaj dyżurnymi są: " + monitorsFormatted).queue();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM");
+        event.reply("Od dnia " + dtf.format(LocalDate.parse(monitors.date, formatter)) + " do dnia " + dtf.format(LocalDate.parse(monitors.date, formatter).plusDays(6)) + " dyżurnymi są: " + monitorsFormatted).queue();
     }
 }
