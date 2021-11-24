@@ -7,7 +7,7 @@ import com.zduniusz.data.monitors.GetMonitors;
 import java.io.IOException;
 
 @SuppressWarnings("BusyWait")
-public class UpdateLuckyNumber implements Runnable {
+public class UpdateLists implements Runnable {
 
     @Override
     public void run() {
