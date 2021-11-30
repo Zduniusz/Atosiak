@@ -27,7 +27,7 @@ public class Infections {
     }
 
     protected static String getCovidLevel() {
-        long polandPopulation = 37_660_000L;
+        long polandPopulation = 37_813_000L;
 
         if (Main.weeklyCovidStat == null)
             return "";
